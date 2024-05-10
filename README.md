@@ -211,38 +211,38 @@ The `Bechdel Test`, or `Bechdel-Wallace Test`, sometimes called the `Mo Movie Me
 
 A work of fiction passing or failing the test does not necessarily indicate the overall representation of women in the work. Instead, the test is used as an indicator for the active presence (or lack thereof) of women in fiction, and to call attention to gender inequality in fiction.
 
-![Origin of the Bechdel Test](/Resources/bechdel_test_origin.jpg)
+![Origin of the Bechdel Test](./Resources/bechdel_test_origin.png)
 
 This image from Alison Bechdel's comic is considered to be the origin of the Bechdel Test.
 
 - A comparison of the datasets for number of movies. CMU data has many more movies in it.
 
-![bechdel vs cmu](/Resources/bechdelvscmu.png)
+![bechdel vs cmu](./Resources/bechdelvscmu.png)
 
 **Bechdel Test Rating Over the Years**
 
 
-![bechdel rating over the years](/Resources/bechdelratingovertheyears.png)
+![bechdel rating over the years](./Resources/bechdelratingovertheyears.png)
 
 **Bechdel Test Pass vs Fail  Over the Years**
 
-![bechdel rating over the years](/Resources/bechdelpassfailovertheyears.png)
+![bechdel rating over the years](./Resources/bechdelpassfailovertheyears.png)
 
 **Rating Proportion - Top 20 Genres**
-![rating proportion top 20 genres](/Resources/ratingproportiontop20genres.png)
+![rating proportion top 20 genres](./Resources/ratingproportiontop20genres.png)
 
 ### *Q.* Is there a correlation between the number of female actors starring in a movie vs. whether the movie will pass the Bechdel test or not?
 
 **Distribution of female actor proportions in movies**
-![](/Resources/femaleactorproportions.png)
+![](./Resources/femaleactorproportions.png)
 
-![two women proportions](/Resources/twowomeninmovies.png)
+![two women proportions](./Resources/twowomeninmovies.png)
 
 Some very interesting insights, movies with less than 2 female actors are more likely to fail the Bechdel test according to observations from this data.
 
 Around 80% movies having more than 2 female characters pass the Bechdel Test. 
 
-![correlation coeff](/Resources/numfemactorscorr.png)
+![correlation coeff](./Resources/numfemactorscorr.png)
 
 We can clearly observe based on this screenshot, that as the number of women actors in the movie increase, the likelihood of passing the Bechdel Test also increases! A strong positive correlation of 0.73 is observed between the number of female actors and the movie passing the bechdel test.
 
@@ -252,31 +252,31 @@ Therefore, we can say we have successfully answered this question. For more plot
 
 Interesting question. For this question we are using the director dataset obtained from `sugarpandaddies` on GitHub. Refer to datasets section for more information.
 
-![movie director gender proportions](/Resources/directiongender.png)
+![movie director gender proportions](./Resources/directiongender.png)
 
 Only 5.6% movies have been directed by women! :(
 
-![woman vs man bechdel rating](/Resources/womanvsmanbechdelrating.png)
+![woman vs man bechdel rating](./Resources/womanvsmanbechdelrating.png)
 
 There is higher proportion of movies passing the Bechdel test among women as compared to men.
 
 Verifying this by calculating the correlation coefficient.
 
-![correlation coefficient](/Resources/corgender.png)
+![correlation coefficient](./Resources/corgender.png)
 
 ### *Q.* Do Bechdel Test Ratings differ across different genres of the movies?
 
-![correlation coefficient](/Resources/poldrama.png)
-![correlation coefficient](/Resources/comedy.png)
-![correlation coefficient](/Resources/drama.png)
-![correlation coefficient](/Resources/animation.png)
-![correlation coefficient](/Resources/lgbt.png)
-![correlation coefficient](/Resources/teen.png)
-![correlation coefficient](/Resources/biography.png)
-![correlation coefficient](/Resources/adventure.png)
-![correlation coefficient](/Resources/action.png)
-![correlation coefficient](/Resources/superhero.png)
-![correlation coefficient](/Resources/thriller.png)
+![correlation coefficient](./Resources/poldrama.png)
+![correlation coefficient](./Resources/comedy.png)
+![correlation coefficient](./Resources/drama.png)
+![correlation coefficient](./Resources/animation.png)
+![correlation coefficient](./Resources/lgbt.png)
+![correlation coefficient](./Resources/teen.png)
+![correlation coefficient](./Resources/biography.png)
+![correlation coefficient](./Resources/adventure.png)
+![correlation coefficient](./Resources/action.png)
+![correlation coefficient](./Resources/superhero.png)
+![correlation coefficient](./Resources/thriller.png)
 
 Yes, the ratings do differ across different genres. Genres like action/adventure/thriller have historically been more likely to fail the Bechdel Test as compared to other genres.
 
@@ -284,35 +284,35 @@ Yes, the ratings do differ across different genres. Genres like action/adventure
 I also made a cool graph using networkx to visualize movie genres and bechdel test ratings. This is a bipartite graph, where one set of nodes represents movies, and the other set represents genres. I then connect a movie node to a genre node if the movie belongs to that genre, and use the Bechdel test rating as an attribute for the movie nodes.
 
 
-![cool graph](/Resources/coolgraph.png)
+![cool graph](./Resources/coolgraph.png)
 
 ## Movie plot sentiment analysis
 
 I first passed all the plot summaries of the movies through a NLP pipeline and made a new column called `Processed Summaries` in the dataframe. Using this column I then conducted sentiment analysis of the plots using Vader Sentiment. The scores are as follows: 
 
-![sentiment bar](/Resources/sentimentscores.png)
+![sentiment bar](./Resources/sentimentscores.png)
 
-![vader distribution](/Resources/vaderdistribution.png)
+![vader distribution](./Resources/vaderdistribution.png)
 
 ### *Q.* Is there a correlation between the sentiment of the movie and the amount of revenue it generates?
 
-![revenue vs sentiment](/Resources/meanrevenuebysentiment.png)
+![revenue vs sentiment](./Resources/meanrevenuebysentiment.png)
 
 The mean revenue of movies with negative sentiment is more than movies with positive sentiment. Strange observation. However, mean is not a robust statistic and this might be due to the presence of outliers.
 
 I then moved on to plot the distribution of the revenue across the sentiments. 
 
-![revenue vs sentiment](/Resources/linesentimentvsrevenue.png)
+![revenue vs sentiment](./Resources/linesentimentvsrevenue.png)
 
-![revenue vs sentiment](/Resources/dotsentimentvsrevenue.png)
+![revenue vs sentiment](./Resources/dotsentimentvsrevenue.png)
 
 In order to get more robust statistics, I then plotted a box plot.
 
-![revenue vs sentiment](/Resources/boxplotrobust.png)
+![revenue vs sentiment](./Resources/boxplotrobust.png)
 
 As suspected, the negative sentiment movies have a lot of outlier values which pump up their average revenue. The robust statistics given by box plot show a very weak effect of the movie sentiment on the revenue earned by the movie. Let's verify this further by calculating the correlation coefficient as well
 
-![revenue vs sentiment](/Resources/corrsentiment.png)
+![revenue vs sentiment](./Resources/corrsentiment.png)
 
 Although the mean bar plot suggests otherwise, there is very weak correlation between a movie having a negative sentiment vs. the movie earning greater revenue. This is probably due to the presence of some outliers for the negative sentiment movies.
 
